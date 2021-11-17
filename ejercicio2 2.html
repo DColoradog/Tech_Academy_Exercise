@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <script>
+        var inicio = ['unacadena', 3, 9, 0, 10, 500, 1, 10, false, true, undefined, null, -1];
+        document.write("Array inicial : <br>" )
+        document.write("["+inicio+"] <br>")
+        console.log(inicio);
+        var filter = inicio.filter(Number.isInteger).filter(el => el != true);
+        // se pone .isInteger dado que solo Number no toma ni el 0 ni el 1
+
+        // se busca donde hayan numeros 1 dado que el filtadro los elimina
+        for (k = 0; k <= inicio.length; k++) {
+            if (inicio[k] == 1) {
+                filter.unshift(1);
+            }
+        }
+        // el ciclo me devulve dos veces el numero 1 en la primera posicion, por ende se elimina
+        // el repetido
+        filter.shift();
+
+        // se organiza el array resultante segun la metodologia Burbuja
+        function Ordenar() {
+            var n, i, k, aux;
+            for (k = 0; k < filter.length; k++) {
+                for (i = 0; i < (filter.length - k); i++) {
+                    if (filter[i] > filter[i + 1]) {
+                        aux = filter[i];
+                        filter[i] = filter[i + 1];
+                        filter[i + 1] = aux;
+                    }
+                }
+            }
+            document.write("["+filter+"]");
+            return console.log(filter);
+        }
+        document.write("<br>");
+        document.write("Array filtrado por numeros y ordenados de menor a mayor: <br>" );
+        Ordenar();
+
+    </script>
+</head>
+
+</html>
