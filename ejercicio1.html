@@ -1,0 +1,26 @@
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <script>
+        var numeroDeElementos = 10;
+        var fibonachi = [0, 1];
+        document.write("Serie fibonachi de " + numeroDeElementos + " elemenos : <br>" )
+        document.write(fibonachi[0] + ", ")
+        document.write(fibonachi[1] + ", ")
+        console.log(fibonachi[0] + ", ")
+        console.log(fibonachi[1] + ", ")
+        for (i = 2; i <= numeroDeElementos - 1; i++) {
+            fibonachi.push(fibonachi[i - 1] + fibonachi[i - 2]);
+            document.write(fibonachi[i] + ", ")
+            console.log(fibonachi[i] + ", ")
+        }
+        if (i == numeroDeElementos) {
+            fibonachi.push(fibonachi[i - 1] + fibonachi[i - 2]);
+            document.write(fibonachi[i] + ". ")
+            console.log(fibonachi[i] + ". ")
+        }
+    </script>
+</head>
+
+</html>
