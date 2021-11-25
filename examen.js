@@ -222,7 +222,7 @@ class Profesor extends Persona {
 
 class Grupo {
     profesor;
-    promedio;
+    promedio = 0;
     estudiantes = [];
     constructor(profesor, estudiantes) {
         this.profesor = profesor;
@@ -247,11 +247,10 @@ class Grupo {
     }
 
     calcularPromedio(){
-        promedio = []
         for (let j = 0; j < this.estudiantes.length; j++) {
-            promedio.push(estudiantes[j].calificacion);
+            this.promedio +=this.estudiantes[j].calificacion;
              }
-        // no alcanzo el tiempo :( 
+        console.log('el promedio es igual a '+(this.promedio / this.estudiantes.length));
     }
 }
 
@@ -270,10 +269,10 @@ jsGroup = new Grupo(juan, Array(alejandro, camilo, santiado, adriana, paula, and
 // daniel.obtDetalles()
 // alejandro.obtDetalles()
 // juan.obtDetalles()
-jsGroup.obtDetalles()
-jsGroup.calificar()
-jsGroup.addGroup()
-jsGroup.calcularPromedio()
+// jsGroup.obtDetalles()
+// jsGroup.calificar()
+// jsGroup.addGroup()
+// jsGroup.calcularPromedio()
 
 
 
