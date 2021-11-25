@@ -245,6 +245,14 @@ class Grupo {
         console.log("los estudiantes que estan adscritos al grupo son")
         console.log(this.estudiantes);
     }
+
+    calcularPromedio(){
+        promedio = []
+        for (let j = 0; j < this.estudiantes.length; j++) {
+            promedio.push(estudiantes[j].calificacion);
+             }
+        // no alcanzo el tiempo :( 
+    }
 }
 
 
@@ -265,6 +273,7 @@ jsGroup = new Grupo(juan, Array(alejandro, camilo, santiado, adriana, paula, and
 jsGroup.obtDetalles()
 jsGroup.calificar()
 jsGroup.addGroup()
+jsGroup.calcularPromedio()
 
 
 
