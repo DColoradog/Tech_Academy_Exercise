@@ -172,16 +172,16 @@ function palindromo(cadena) {
 class Persona {
     nombre;
     edad;
-    constructor(nombre,edad) {
+    constructor(nombre, edad) {
         this.edad = edad;
         this.nombre = nombre;
     }
 
-    obtDetalles(){
-        if(typeof this.nombre == "string" && Number.isInteger(this.edad) && 0<this.edad ){
-        console.log(`El nombre de la persona es ${this.nombre} y tiene ${this.edad} años de edad`);
+    obtDetalles() {
+        if (typeof this.nombre == "string" && Number.isInteger(this.edad) && 0 < this.edad) {
+            console.log(`El nombre de la persona es ${this.nombre} y tiene ${this.edad} años de edad`);
         }
-        else{
+        else {
             console.log(`ingreso un caracter invalido, verifique nuevamente`);
         }
     }
@@ -193,11 +193,11 @@ class Estudiante extends Persona {
         super(nombre, edad);
         this.calificacion = 5;
     }
-    obtDetalles(){
-        if(typeof this.nombre == "string" && Number.isInteger(this.edad) && 0<this.edad ){
-        console.log(`El nombre de el Estudiante es ${this.nombre}, tiene ${this.edad} años de edad y la nota en la asignatura es de ${this.calificacion}`);
+    obtDetalles() {
+        if (typeof this.nombre == "string" && Number.isInteger(this.edad) && 0 < this.edad) {
+            console.log(`El nombre de el Estudiante es ${this.nombre}, tiene ${this.edad} años de edad y la nota en la asignatura es de ${this.calificacion}`);
         }
-        else{
+        else {
             console.log(`ingreso un caracter invalido, verifique nuevamente`);
         }
     }
@@ -210,11 +210,11 @@ class Profesor extends Persona {
         this.asigantura = "JS";
         this.nivel = "basico";
     }
-    obtDetalles(){
-        if(typeof this.nombre == "string" && Number.isInteger(this.edad) && 0<this.edad ){
-        console.log(`El nombre de el Profesor es ${this.nombre}, tiene ${this.edad} años de edad y dica el curso de ${this.asigantura} en el nivel ${this.nivel}` );
+    obtDetalles() {
+        if (typeof this.nombre == "string" && Number.isInteger(this.edad) && 0 < this.edad) {
+            console.log(`El nombre de el Profesor es ${this.nombre}, tiene ${this.edad} años de edad y dica el curso de ${this.asigantura} en el nivel ${this.nivel}`);
         }
-        else{
+        else {
             console.log(`ingreso un caracter invalido, verifique nuevamente`);
         }
     }
@@ -223,53 +223,62 @@ class Profesor extends Persona {
 class Grupo {
     profesor;
     promedio;
-    estudiantes=[];
-    constructor(profesor,estudiantes) {
+    estudiantes = [];
+    constructor(profesor, estudiantes) {
         this.profesor = profesor;
         for (let j = 0; j < estudiantes.length; j++) {
             this.estudiantes.push(estudiantes[j])
         }
     }
-    obtDetalles(){
+    addGroup() {
+        let grupo = new Object();
+        grupo = { profesor: this.profesor, estudiantes: this.estudiantes }
+        console.log(grupo);
+    }
+    calificar() {
+        for (let j = 0; j < this.estudiantes.length; j++) {
+       console.log (this.estudiantes[j].calificacion = Math.random()*10);
+        }
+    }
+    obtDetalles() {
         console.log(`El nombre de el Profesor es ${this.profesor.nombre} y  tiene ${this.profesor.edad} años de edad`);
         console.log("los estudiantes que estan adscritos al grupo son")
         console.log(this.estudiantes);
-        }
-        calificar(){
-            
-        }
-    
     }
-    
+}
 
 
 
-let daniel = new Persona('Daniel',25)
-let alejandro = new Estudiante('Alejandro',26)
-let camilo = new Estudiante('camilo',21)
-let santiado = new Estudiante('santiado',22)
-let adriana = new Estudiante('adriana',28)
-let paula = new Estudiante('paula',22)
-let andres = new Estudiante('andres',28)
-let juan = new Profesor('Juan',35)
+
+let daniel = new Persona('Daniel', 25)
+let alejandro = new Estudiante('Alejandro', 26)
+let camilo = new Estudiante('camilo', 21)
+let santiado = new Estudiante('santiado', 22)
+let adriana = new Estudiante('adriana', 28)
+let paula = new Estudiante('paula', 22)
+let andres = new Estudiante('andres', 28)
+let juan = new Profesor('Juan', 35)
+jsGroup = new Grupo(juan, Array(alejandro, camilo, santiado, adriana, paula, andres));
 // daniel.obtDetalles()
 // alejandro.obtDetalles()
 // juan.obtDetalles()
-jsGroup = new Grupo(juan,Array(alejandro,camilo,santiado,adriana,paula,andres));
 jsGroup.obtDetalles()
+jsGroup.calificar()
+jsGroup.addGroup()
+
 
 
 
 // ---------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------
 // 5. BONUS
-function combinacion(str){
-validarString(str)
+function combinacion(str) {
+    validarString(str)
 
-    if (str.length <= 2){
-        return str.length === 2 ? [str, str[1]+ str[0]] : [str]
+    if (str.length <= 2) {
+        return str.length === 2 ? [str, str[1] + str[0]] : [str]
     }
-   return  str.split('').reduce((a,c,i) => a.concat(combinacion(str.slice(0,i)+ str.slice(i + 1)).map(v => c + v)),[]);
+    return str.split('').reduce((a, c, i) => a.concat(combinacion(str.slice(0, i) + str.slice(i + 1)).map(v => c + v)), []);
 }
 
 // try {
