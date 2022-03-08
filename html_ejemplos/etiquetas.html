@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>otro titulo de pagina en la etiqueta</title>
+</head>
+
+<body>
+    <header>
+        link
+    </header>
+    <main>
+        mayor relevancia
+    </main>
+    <p>My mother has<span style="color:aqua"> green </span>eyes</p>
+    <p style="color:green"> my mother has green eyes</p>
+    <p style="font-size:large"> my mother has green eyes</p>
+    <!-- -->
+    <p>forzar <br> separacion <br> en un texto</p>
+    <section>
+        primer seccion
+        <h1> encabezado h1</h1>
+        <h2 style="font-size:large"> encabezado h2</h2>
+
+        <h3 style="font-size:10px"> encabezado h3</h3>
+        <h4> encabezado h4</h4>
+        <h5> encabezado h5</h5>
+    </section>
+
+    <section>
+        <!-- ENLACE dentro de la misma pestaña-->
+        <a href="https://www.google.com">google misma pestaña</a><br>
+        <!-- ENLACE en otra pestaña pestaña-->
+        <a href="https://www.google.com" target="_blanck">google otra pestaña</a>
+    </section>
+    <section>
+        <img src="img.png" alt=" pantallazo" width="500" height="500" title="title hover">
+    </section>
+    <picture>
+        <!-- diferente imagen segun el tamaño-->
+        <source srcset="img2.png" media="(max-width: 760px)">
+        <source srcset="img.png" media="(max-width: 1760px)">
+        <!-- cuando no se llegue a cumplir pone el img-->
+        <img src="img3.png" alt=" pantallazo" width="500" height="500" title="title hover">
+    </picture>
+    <!-- controls es para q la persona pueda pararlo o adelan
+    y autoplay para q se auto reproduscaza-->
+    <video width="320" height="320" controls autoplay>
+        <source src="movie.mp4" type="video/mp4" autop>
+        <source src="movie2.mp4" type="video/mp4">
+        tu compuador no soporta este videooo
+    </video>
+    <audio controls>
+        <source src="movie.mp3" type="audio/mp3">
+        <source src="movie2.mp3" type="audio/mp3">
+        tu compuador no soporta este audddio
+    </audio>
+</body>
+
+</html>

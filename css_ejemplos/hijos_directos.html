@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>otro titulo de pagina en la etiqueta</title>
+</head>
+
+<body>
+    <div>
+        <p>parrafo 1</p>
+        <p>parrafo 2</p>
+        <section>
+            <p>parrafo 3</p>
+        </section>
+    </div>
+    <p>parrafo 4</p>
+    <p>parrafo 4</p>
+    <p>parrafo 4</p>
+
+    <input type="text">mamabuv
+    <input type="email">pinche email
+
+    <!-- hijos directos div > p-->
+    <!-- hermanos div+p-->
+    <!--before afrega contenido antes-->
+    <!-- nth-child(3 no todos solo el tercero-->
+    <style>
+        div p {
+            background: yellow;
+        }
+
+        div>p {
+            background: red;
+        }
+
+        div+p {
+            background: aqua;
+        }
+
+        body>p::before {
+            content: " mario gono";
+
+        }
+
+        body>p:nth-child(3):before {
+            content: " hijo de las mil";
+
+        }
+
+        input[type="text"] {
+            background-color: aqua;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            font-size: 40px;
+        }
+    </style>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>otro titulo de pagina en la etiqueta</title>
+</head>
+
+<body>
+
+    <!-- para el padding y margin, si solo es un valor lo aplica a los 4 lados
+    si son dos es simetrico
+si es 4 es para cada uno de los lados-->
+    <div id="padre">
+
+        <div id="c1" class="hijos">1</div>
+        <div id="c2" class="hijos"> 2</div>
+        <div id="c3" class="hijos">3</div>
+        <div id="c4" class="hijos">4</div>
+        <div id="c5" class="hijos">5</div>
+
+    </div>
+
+    <style>
+        #padre {
+            display: grid;
+            background-color: aqua;
+            grid-template-columns: repeat(2, 1fr);
+
+        }
+
+        /* primer columna 10 px y segunda de 10%
+        grid-template-columns: 10px 10% 5px;       
+        */
+
+        /*grid-template-columns: 1fr 2fr 3fr; 
+        3 columnas con diferentes fracciones de la pantalla*/
+
+        .hijos {
+            height: 100px;
+            width: auto;
+            border: black ipx solid;
+        }
+
+        #c1 {
+            background-color: blueviolet;
+        }
+
+        #c2 {
+            background-color: rgb(62, 81, 185);
+        }
+
+        #c3 {
+            background-color: rgb(46, 146, 75);
+        }
+
+        #c4 {
+            background-color: rgb(146, 138, 31);
+        }
+
+        #c5 {
+            background-color: rgb(181, 92, 33);
+        }
+    </style>
+
+</body>
+
+</html>

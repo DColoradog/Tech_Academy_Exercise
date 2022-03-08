@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>otro titulo de pagina en la etiqueta</title>
+</head>
+
+<body>
+
+    <!-- para el padding y margin, si solo es un valor lo aplica a los 4 lados
+    si son dos es simetrico
+si es 4 es para cada uno de los lados-->
+    <div class="padre"></div>
+    <div class="cuadro ease"> ease</div>
+    <div class="cuadro easein"> easein</div>
+    <div class="cuadro easeout">easeout </div>
+    <div class="cuadro easeinout">easeinout</div>
+    <div class="cuadro linear">linear</div>
+    <div class="cuadro cb">cb</div>
+
+
+
+    <style>
+        .padre {
+            animation: caida 2s linear 1ms 2;
+            animation-iteration-count: infinite;
+        }
+
+        .padre {
+            width: 200px;
+            height: 200px;
+            background-color: aqua;
+            position: absolute;
+        }
+
+        @keyframes caida {
+            from {
+                top: 200px;
+                background-color: yellow;
+            }
+
+            to {
+                top: 400px
+            }
+        }
+
+        @keyframes colorDeFondo {
+            from {
+                background-color: white;
+                width: 10px;
+            }
+
+            to {
+                background-color: aqua;
+                width: 200px;
+            }
+        }
+
+        .cuadro {
+            animation: colorDeFondo;
+            animation-duration: 5s;
+            background-color: blueviolet;
+            margin: 5px;
+            width: 10px;
+        }
+
+        .ease {
+            animation-timing-function: ease !important;
+        }
+
+        .easein {
+            animation-timing-function: ease-in !important;
+        }
+
+        .easeout {
+            animation-timing-function: ease-out;
+        }
+
+        .easeinout {
+            animation-timing-function: ease-in-out;
+        }
+
+        .linear {
+            animation-timing-function: linear;
+        }
+
+        .cb {
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+    </style>
+
+</body>
+
+</html>
