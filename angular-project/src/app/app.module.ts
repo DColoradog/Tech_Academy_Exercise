@@ -11,6 +11,7 @@ import { EstrellasComponent } from './shared/estrellas/estrellas.component';
 import { FormsModule } from '@angular/forms';
 import { ClientesComponent } from './clientes/clientes.component';
 import { RouterModule } from '@angular/router';
+import { InicioComponent } from './autos/inicio/inicio.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterModule } from '@angular/router';
     DetalleAutosComponent,
     AEspacioPipe,
     EstrellasComponent,
-    ClientesComponent
+    ClientesComponent,
+    InicioComponent
 
   ],
   imports: [
@@ -30,7 +32,7 @@ import { RouterModule } from '@angular/router';
     RouterModule.forRoot([
       { path: "autos", component: ListaAutosComponent },
       { path: "auto/:id", component: DetalleAutosComponent },
-      //  { path: "inicio", component: InicioComponent},
+      { path: "inicio", component: InicioComponent },
       { path: "clientes", component: ClientesComponent },
       { path: "", redirectTo: "inicio", pathMatch: "full" },
       { path: "**", redirectTo: "inicio", pathMatch: "full" }
