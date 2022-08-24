@@ -9,6 +9,8 @@ import { AEspacioPipe } from './shared/a-espacio.pipe';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EstrellasComponent } from './shared/estrellas/estrellas.component';
 import { FormsModule } from '@angular/forms';
+import { ClientesComponent } from './clientes/clientes.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -16,14 +18,23 @@ import { FormsModule } from '@angular/forms';
     ListaAutosComponent,
     DetalleAutosComponent,
     AEspacioPipe,
-    EstrellasComponent
+    EstrellasComponent,
+    ClientesComponent
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot([
+      { path: "autos", component: ListaAutosComponent },
+      { path: "auto/:id", component: DetalleAutosComponent },
+      //  { path: "inicio", component: InicioComponent},
+      { path: "clientes", component: ClientesComponent },
+      { path: "", redirectTo: "inicio", pathMatch: "full" },
+      { path: "**", redirectTo: "inicio", pathMatch: "full" }
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent, ListaAutosComponent]
